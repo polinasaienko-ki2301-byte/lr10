@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalog</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- i18next loaded from CDN -->
+  <script src="https://unpkg.com/i18next@21.6.16/dist/umd/i18next.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1 data-i18n="title"></h1>
+    <label class="lang-switch">
+      <span data-i18n="language"></span>
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="uk">Українська</option>
+      </select>
+    </label>
+  </header>
+
+  <main>
+    <p id="catalog-intro" data-i18n="intro"></p>
+    <section id="catalog" class="catalog"></section>
+  </main>
+
+  <!-- Language selection modal, shown only on the first visit -->
+  <div id="language-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-content">
+      <h2 id="modal-title">Choose your language / Оберіть мову</h2>
+      <div class="modal-buttons">
+        <button type="button" data-lang="en">English</button>
+        <button type="button" data-lang="uk">Українська</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script/script.js"></script>
+</body>
+</html>

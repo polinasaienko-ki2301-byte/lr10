@@ -1,0 +1,93 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #d9e0e7;
+}
+
+.header h1 { margin: 0; font-size: 1.5rem; }
+
+.lang-switch { display: flex; gap: 8px; align-items: center; }
+.lang-switch select { padding: 6px 10px; font: inherit; }
+
+main { padding: 24px; max-width: 1000px; margin: 0 auto; }
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #d9e0e7;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card h3 { margin: 0; font-size: 1.1rem; }
+.card p { margin: 0; color: #52606d; flex: 1; }
+.card .price { font-weight: 600; color: #1f2933; }
+
+.card button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: #2f5d8a;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.card button:hover { background: #244a70; }
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 10;
+}
+.modal[hidden] { display: none; }
+
+.modal-content {
+  background: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  width: min(92vw, 380px);
+  text-align: center;
+}
+.modal-content h2 { margin-top: 0; font-size: 1.2rem; }
+
+.modal-buttons { display: flex; gap: 12px; justify-content: center; }
+.modal-buttons button {
+  flex: 1;
+  padding: 10px 14px;
+  font: inherit;
+  border: 1px solid #2f5d8a;
+  border-radius: 6px;
+  background: #fff;
+  color: #2f5d8a;
+  cursor: pointer;
+}
+.modal-buttons button:hover { background: #2f5d8a; color: #fff; }
+
+button:focus-visible, select:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
